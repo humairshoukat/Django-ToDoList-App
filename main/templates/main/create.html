@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Create New List{% endblock%}\
+
+{% block content %}
+<h3>Create Page</h3>
+<form method="post" action="/create/" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepand">
+            <button type="submit" name="save" class="btn btn-primary">Create New</button>
+        </div>
+        {{form.name}}
+    </div>
+    <p>You can't create a list without Login. Login <a href="/login">Here</a> </p>
+</form>
+{% endblock%}
